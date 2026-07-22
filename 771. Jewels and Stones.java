@@ -1,0 +1,23 @@
+import java.util.HashSet;
+import java.util.Set;
+
+class Solution {
+    public int numJewelsInStones(String jewels, String stones) {
+        Set<Character> jewelSet = new HashSet<>();
+        
+        // Add all jewel characters to the set
+        for (char j : jewels.toCharArray()) {
+            jewelSet.add(j);
+        }
+        
+        int count = 0;
+        // Count how many stones are in the jewel set
+        for (char s : stones.toCharArray()) {
+            if (jewelSet.contains(s)) {
+                count++;
+            }
+        }
+        
+        return count;
+    }
+}
